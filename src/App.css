@@ -1,0 +1,20 @@
+/* :root {
+  --background: #101114;
+  --primary-color: #1c1d20;
+  --secondary-color: #4a4d57;
+  --accent-color: #00ffc4;
+  --text-color: #f9f9f9;
+}
+.App {
+  mix-blend-mode: overlay;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+}
+::-webkit-scrollbar {
+  display: none;
+} */
