@@ -8,9 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 mongoose
-  .connect("mongodb://0.0.0.0:27017/users")
+  .connect(
+    "mongodb+srv://sarvilrathour83:TBjgYhh4OZcEZsdp@users.acyrx.mongodb.net/users?retryWrites=true&w=majority&appName=users"
+  )
   .then(() => {
-    console.log("mongodb connected");
+    console.log(`Connected to MongoDB to ${mongoose.connection.host}`);
   })
   .catch(() => {
     console.log("failed");

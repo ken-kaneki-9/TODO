@@ -35,12 +35,14 @@ async function setupUserModel() {
 }
 // Connect to MongoDB
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/todo");
-  console.log("Connected to MongoDB");
+  await mongoose.connect(
+    "mongodb+srv://sarvilrathour83:t4aLCIFgJbnO4CUK@fortodo.julgq.mongodb.net/todo?retryWrites=true&w=majority&appName=fortodo"
+  );
+  console.log(`Connected to MongoDB to ${mongoose.connection.host}`);
 }
 async function connectUsersDB() {
   const usersConnection = mongoose.createConnection(
-    "mongodb://127.0.0.1:27017/users",
+    "mongodb+srv://sarvilrathour83:TBjgYhh4OZcEZsdp@users.acyrx.mongodb.net/users?retryWrites=true&w=majority&appName=users",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
