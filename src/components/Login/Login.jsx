@@ -13,7 +13,7 @@ function Login() {
 
     try {
       await axios
-        .post("http://localhost:8000/", {
+        .post("https://todo-1-grc1.onrender.com/", {
           username,
           password,
         })
@@ -60,7 +60,6 @@ function Login() {
       <br />
 
       <Link to="/signup">Signup Page</Link>
-     
     </div>
   );
 }

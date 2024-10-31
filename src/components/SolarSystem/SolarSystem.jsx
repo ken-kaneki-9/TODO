@@ -11,7 +11,7 @@ function SolarSystem() {
   // Fetch todos from the backend
   const fetchTodos = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/get"); // Fetch all todos
+      const response = await axios.get("https://todo-5h8u.onrender.com/get"); // Fetch all todos
       SetPlaceholders(response.data); // Store all todos
     } catch (error) {
       console.error("Error fetching todos:", error);
@@ -20,7 +20,9 @@ function SolarSystem() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/users"); // Adjusted endpoint to point to server2
+      const response = await axios.get(
+        "https://todo-1-grc1.onrender.com/users"
+      ); // Adjusted endpoint to point to server2
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -52,7 +54,7 @@ function SolarSystem() {
       };
 
       try {
-        await axios.post("http://localhost:5000/add", newTodo);
+        await axios.post("https://todo-5h8u.onrender.com/add", newTodo);
         setInputValue(""); // Clear the input field
         fetchTodos(); // Refetch todos to get the updated list
       } catch (error) {
@@ -64,7 +66,7 @@ function SolarSystem() {
   // Delete todo
   const deletee = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/todos/${id}`);
+      await axios.delete(`https://todo-5h8u.onrender.com/todos/${id}`);
       SetPlaceholders(placeholderss.filter((sarvil) => sarvil._id !== id));
     } catch (error) {
       console.error("Error deleting todo:", error);
@@ -77,7 +79,10 @@ function SolarSystem() {
     const updatedTodo = { ...todoToUpdate, done: !todoToUpdate.done }; // Toggle the done status
 
     try {
-      await axios.put(`http://localhost:5000/update/${id}`, updatedTodo);
+      await axios.put(
+        `https://todo-5h8u.onrender.com/update/${id}`,
+        updatedTodo
+      );
       fetchTodos(); // Refetch todos to get the updated list
     } catch (error) {
       console.error("Error updating todo:", error);
